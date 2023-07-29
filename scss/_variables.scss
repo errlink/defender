@@ -1,0 +1,55 @@
+$blue-color: #0073dd;
+$yellow-color: #fdef0e;
+$black-color: #181717;
+$dark-blue-color: #10435c;
+$white-color: #fff;
+$light-green: #d6ffe9;
+$grey-bg: #f3edff;
+$grey: #c6c7d2;
+$green: #138c35;
+
+$fontSize: 24px;
+$fontFamily: 'Lato', sans-serif;
+
+$mobileSmall: 479.98px;
+$mobileMedium: 767.98px;
+$tablet: 991.98px;
+$desktop: 1199.98px;
+$desktopMiddle: 1299.98px;
+$desktopLarge: 1399.98px;
+
+@mixin mobileS {
+  @media (max-width: $mobileSmall) {
+    @content;
+  }
+}
+
+@mixin mobileM {
+  @media (max-width: $mobileMedium) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin desktopM {
+  @media (max-width: $desktopMiddle) {
+    @content;
+  }
+}
+
+@mixin desktopL {
+  @media (max-width: $desktopLarge) {
+    @content;
+  }
+}

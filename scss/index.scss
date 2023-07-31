@@ -392,6 +392,8 @@ footer {
 // ============================= project
 
 .stage {
+  min-width: 800px;
+  overflow-x: auto;
   &__header {
     display: flex;
     align-items: center;
@@ -431,9 +433,6 @@ footer {
     display: flex;
 
     margin: 0 -24px;
-
-    min-width: 800px;
-    overflow-x: auto;
   }
 
   &__item {

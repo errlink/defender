@@ -108,6 +108,19 @@ h6 {
   }
 }
 
+footer .header__top {
+  border-top: 2px solid #fdef0e;
+}
+
+footer .header__bottom {
+  border-top: 2px solid #0073dd;
+  border-bottom: none;
+}
+
+footer {
+  margin-top: 120px;
+}
+
 .top-header {
   font-size: 16px;
 }
@@ -423,11 +436,22 @@ h6 {
   padding-top: 118px;
   padding-bottom: 64px;
 }
+@media (max-width: 991.98px) {
+  .stage__header {
+    padding-top: 64px;
+    padding-bottom: 32px;
+  }
+}
 .stage__header h2 {
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
   line-height: 130%;
+}
+@media (max-width: 991.98px) {
+  .stage__header h2 {
+    font-size: 32px;
+  }
 }
 .stage__link {
   display: flex;
@@ -440,6 +464,8 @@ h6 {
 .stage__list {
   display: flex;
   margin: 0 -24px;
+  min-width: 800px;
+  overflow-x: auto;
 }
 .stage__item {
   flex: 0 1 33.333%;
@@ -482,11 +508,15 @@ h6 {
 
 .projects {
   display: flex;
-  margin: 0 -25px;
 }
 .projects__item {
   flex: 0 1 50%;
   margin: 0 25px;
+}
+@media (max-width: 991.98px) {
+  .projects__item {
+    margin: 0 12.5px;
+  }
 }
 .projects__img {
   position: relative;
@@ -515,8 +545,24 @@ h6 {
   line-height: 150%;
   color: #000;
 }
+@media (max-width: 991.98px) {
+  .projects__contents h3 {
+    font-size: 24px;
+    padding-top: 24px;
+  }
+  .projects__contents p {
+    font-size: 18px;
+    padding-top: 24px;
+  }
+}
 .projects__buttons {
+  display: flex;
   padding-top: 32px;
+}
+@media (max-width: 991.98px) {
+  .projects__buttons {
+    padding-top: 24px;
+  }
 }
 .projects__button {
   display: inline-block;
@@ -530,6 +576,11 @@ h6 {
   margin-right: 32px;
   background: #181717;
   color: #fff;
+}
+@media (max-width: 1199.98px) {
+  .projects__button_support {
+    margin-right: 16px;
+  }
 }
 .projects__button_details {
   background: #e2ecf5;

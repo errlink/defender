@@ -41,6 +41,18 @@
   }
 }
 
+footer .header__top {
+  border-top: 2px solid $yellow-color;
+}
+footer .header__bottom {
+  border-top: 2px solid $blue-color;
+  border-bottom: none;
+}
+
+footer {
+  margin-top: 120px;
+}
+
 .top-header {
   font-size: 16px;
 
@@ -379,13 +391,6 @@
 
 // ============================= project
 
-.projects {
-  &__container {
-  }
-
-  &__item {
-  }
-}
 .stage {
   &__header {
     display: flex;
@@ -395,11 +400,20 @@
     padding-top: 118px;
     padding-bottom: 64px;
 
+    @include tablet {
+      padding-top: 64px;
+      padding-bottom: 32px;
+    }
+
     h2 {
       font-size: 48px;
       font-style: normal;
       font-weight: 600;
       line-height: 130%;
+
+      @include tablet {
+        font-size: 32px;
+      }
     }
   }
 
@@ -417,6 +431,9 @@
     display: flex;
 
     margin: 0 -24px;
+
+    min-width: 800px;
+    overflow-x: auto;
   }
 
   &__item {
@@ -472,10 +489,14 @@
 
 .projects {
   display: flex;
-  margin: 0 -25px;
+
   &__item {
     flex: 0 1 50%;
     margin: 0 25px;
+
+    @include tablet {
+      margin: 0 12.5px;
+    }
   }
 
   &__img {
@@ -510,10 +531,28 @@
 
       color: #000;
     }
+
+    @include tablet {
+      h3 {
+        font-size: 24px;
+
+        padding-top: 24px;
+      }
+
+      p {
+        font-size: 18px;
+        padding-top: 24px;
+      }
+    }
   }
 
   &__buttons {
+    display: flex;
     padding-top: 32px;
+
+    @include tablet {
+      padding-top: 24px;
+    }
   }
 
   &__button {
@@ -524,10 +563,15 @@
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
+
     &_support {
       margin-right: 32px;
       background: $black-color;
       color: $white-color;
+
+      @include desktop {
+        margin-right: 16px;
+      }
     }
 
     &_details {

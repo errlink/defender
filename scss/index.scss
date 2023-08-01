@@ -1,5 +1,5 @@
-@import 'null';
-@import 'variables';
+@import "null";
+@import "variables";
 
 .wrapper {
   min-height: 100%;
@@ -15,7 +15,7 @@
   }
 }
 
-[class*='__container'] {
+[class*="__container"] {
   max-width: $desktopLarge + 30px;
   margin: 0 auto;
   padding: 0 15px;
@@ -37,6 +37,10 @@
 
     @include tablet {
       padding: 24px 0;
+    }
+
+    @include mobileM {
+      padding: 12 0;
     }
   }
 }
@@ -81,8 +85,7 @@ footer {
       }
 
       @include mobileM {
-        margin-top: 8px;
-        flex-direction: column;
+        display: none;
       }
     }
   }
@@ -254,6 +257,13 @@ footer {
     background: $grey-bg;
   }
 
+  .--ua,
+  .--usa {
+    @include mobileM {
+      display: none;
+    }
+  }
+
   &__btn-img {
   }
 
@@ -392,8 +402,6 @@ footer {
 // ============================= project
 
 .stage {
-  min-width: 800px;
-  overflow-x: auto;
   &__header {
     display: flex;
     align-items: center;
@@ -403,8 +411,8 @@ footer {
     padding-bottom: 64px;
 
     @include tablet {
-      padding-top: 64px;
-      padding-bottom: 32px;
+      padding-top: 32px;
+      padding-bottom: 24px;
     }
 
     h2 {
@@ -426,6 +434,11 @@ footer {
 
     span {
       margin-right: 22px;
+
+      @include tablet {
+        font-size: 18px;
+        margin-right: 12px;
+      }
     }
   }
 
@@ -433,6 +446,15 @@ footer {
     display: flex;
 
     margin: 0 -24px;
+
+    min-width: 800px;
+
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__item {
@@ -469,12 +491,19 @@ footer {
     font-size: 24px;
 
     transition: color 0.3s ease-in-out;
+
+    @include tablet {
+      font-size: 18px;
+    }
   }
 
   &__data {
     font-size: 20px;
     color: #353535;
     font-weight: 400;
+    @include tablet {
+      font-size: 14px;
+    }
   }
   &__desc,
   &__data {
@@ -488,13 +517,32 @@ footer {
 
 .projects {
   display: flex;
+  margin: 0 -12.5px;
+
+  @include tablet {
+    margin: 0 -6px;
+  }
+
+  @include mobileM {
+    display: block;
+
+    margin: 0;
+  }
 
   &__item {
     flex: 0 1 50%;
     margin: 0 25px;
 
     @include tablet {
-      margin: 0 12.5px;
+      margin: 0 12px;
+    }
+
+    @include mobileM {
+      margin-right: 0;
+      margin-left: 0;
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
     }
   }
 
@@ -562,6 +610,12 @@ footer {
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
+
+    @include tablet {
+      padding: 16px 22px;
+
+      font-size: 18px;
+    }
 
     &_support {
       margin-right: 32px;

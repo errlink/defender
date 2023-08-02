@@ -21,10 +21,25 @@
   padding: 0 15px;
 }
 
+.top-burger {
+  display: none;
+
+  @include tablet {
+    display: block;
+    margin-right: 15px;
+  }
+}
+
 .header {
   white-space: nowrap;
   &__top {
     border-bottom: 2px solid $yellow-color;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      display: block;
+    }
   }
 
   &__bottom {
@@ -40,13 +55,19 @@
     }
 
     @include mobileM {
-      padding: 12 0;
+      padding: 12px 0;
     }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
 footer .header__top {
   border-top: 2px solid $yellow-color;
+  border-bottom: none;
 }
 footer .header__bottom {
   border-top: 2px solid $blue-color;
@@ -55,6 +76,10 @@ footer .header__bottom {
 
 footer {
   margin-top: 120px;
+
+  @include tablet {
+    margin-top: 60px;
+  }
 }
 
 .top-header {
@@ -64,10 +89,6 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include mobileM {
-      flex-direction: column;
-    }
   }
 
   &__column {
@@ -80,11 +101,7 @@ footer {
     }
 
     &:last-child {
-      @include desktopM {
-        white-space: wrap;
-      }
-
-      @include mobileM {
+      @include tablet {
         display: none;
       }
     }
@@ -99,6 +116,10 @@ footer {
     @include desktopM {
       flex-direction: column;
       align-items: flex-start;
+    }
+
+    @include mobileS {
+      font-size: 10px;
     }
   }
 
@@ -401,6 +422,46 @@ footer {
 
 // ============================= project
 
+.nav-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+
+  z-index: 99;
+
+  background: white;
+
+  &__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  &__lang {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 8px;
+    }
+  }
+
+  ul {
+    margin-top: 60px;
+    li {
+      font-size: 32px;
+      font-weight: 700;
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
 .stage {
   &__header {
     display: flex;
@@ -447,19 +508,26 @@ footer {
 
     margin: 0 -24px;
 
-    min-width: 800px;
-
-    overflow-x: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
+    @include tablet {
+      margin: 0 -8px;
     }
+
+    // overflow-x: auto;
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
+    // &::-webkit-scrollbar {
+    //   display: none;
+    // }
   }
 
   &__item {
     flex: 0 1 33.333%;
     margin: 0 24px;
+
+    min-width: 270px;
+    @include tablet {
+      margin: 0 8px;
+    }
 
     &:hover {
       img {
@@ -632,4 +700,8 @@ footer {
       color: $black-color;
     }
   }
+}
+
+.swiper {
+  width: 100%;
 }

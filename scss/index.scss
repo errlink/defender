@@ -32,6 +32,9 @@
 
 .header {
   white-space: nowrap;
+
+ 
+
   &__top {
     border-bottom: 2px solid $yellow-color;
     display: flex;
@@ -285,8 +288,6 @@ footer {
     }
   }
 
-  &__btn-img {
-  }
 
   &__btn-donat {
     padding: 24px 28px;
@@ -463,6 +464,7 @@ footer {
 }
 
 .stage {
+  
   &__header {
     display: flex;
     align-items: center;
@@ -485,6 +487,10 @@ footer {
       @include tablet {
         font-size: 32px;
       }
+
+      @include mobileM {
+        font-size: 24px;
+      }
     }
   }
 
@@ -500,13 +506,17 @@ footer {
         font-size: 18px;
         margin-right: 12px;
       }
+
+            @include mobileM {
+        font-size: 14px;
+      }
     }
   }
 
   &__list {
     display: flex;
+    margin: 0 -12px;
 
-    margin: 0 -24px;
 
     @include tablet {
       margin: 0 -8px;
@@ -518,11 +528,12 @@ footer {
     // &::-webkit-scrollbar {
     //   display: none;
     // }
+
   }
 
   &__item {
     flex: 0 1 33.333%;
-    margin: 0 24px;
+    margin: 0 12px;
 
     min-width: 270px;
     @include tablet {
